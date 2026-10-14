@@ -1,6 +1,8 @@
 # When Unlearning Meets the Harness: Helpful Assistance, Harmful Recovery
 
-ToolAlpaca evaluation, unlearning baselines, and **Harness-Aware Robust Unlearning (HARU)**.
+This document contains instructions for evaluating tool unlearning with and without
+a harness, running unlearning baselines, and applying **Harness-Aware Robust
+Unlearning (HARU)** on the ToolAlpaca benchmark.
 
 ## Setup
 
@@ -14,8 +16,9 @@ pip install torch==2.1.2 --index-url https://download.pytorch.org/whl/cu121
 pip install -r requirements.txt
 ```
 
-Evaluation uses GPT-3.5 Turbo (`gpt-3.5-turbo`) for the ToolAlpaca benchmark
-simulator and GPT-4 (`gpt-4-0613`) for judging. Set your API key:
+For a fair comparison, we use the same models as the original ToolAlpaca
+benchmark: GPT-3.5 Turbo (`gpt-3.5-turbo`) for simulation and GPT-4
+(`gpt-4-0613`) for judging. Set your API key:
 
 ```bash
 export OPENAI_API_KEY=your-key
@@ -24,7 +27,7 @@ export OPENAI_API_KEY=your-key
 ## Evaluation
 
 We evaluate tool unlearning with and without harness assistance.
-`TangQiaoYu/ToolAlpaca-7B` is the original model, and
+`TangQiaoYu/ToolAlpaca-7B` is the original model before unlearning, and
 `TangQiaoYu/ToolAlpaca-13B` is the default harness model.
 
 Each command starts the simulator, evaluates all examples, and judges the results.
@@ -48,7 +51,7 @@ to `outputs/<split>_<mode>/judge.json`; use `--output` to choose a new run direc
 
 ## Unlearning baselines
 
-Train from the original 7B model (eight GPUs by default; set `NPROC` to change):
+We use 8 × A100 GPUs for full-parameter unlearning of the original 7B model:
 
 ```bash
 bash tool_unlearn/baselines/run.sh graddiff checkpoints/graddiff --epochs 5
