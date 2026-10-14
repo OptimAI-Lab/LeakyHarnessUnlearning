@@ -14,10 +14,6 @@ pip install torch==2.1.2 --index-url https://download.pytorch.org/whl/cu121
 pip install -r requirements.txt
 ```
 
-Python defaults to `TangQiaoYu/ToolAlpaca-7B` as the original model and
-`TangQiaoYu/ToolAlpaca-13B` as the harness model. Models and tokenizers download
-automatically from Hugging Face; local checkpoints also work.
-
 Evaluation uses GPT-3.5 Turbo (`gpt-3.5-turbo`) for the ToolAlpaca benchmark
 simulator and GPT-4 (`gpt-4-0613`) for judging. Set your API key:
 
@@ -26,6 +22,10 @@ export OPENAI_API_KEY=your-key
 ```
 
 ## Evaluation
+
+We evaluate tool unlearning with and without harness assistance.
+`TangQiaoYu/ToolAlpaca-7B` is the original model, and
+`TangQiaoYu/ToolAlpaca-13B` is the default harness model.
 
 Each command starts the simulator, evaluates all examples, and judges the results.
 
@@ -42,8 +42,8 @@ python evaluate.py --mode harness --model TangQiaoYu/ToolAlpaca-7B
 ```
 
 Replace `--model` with the checkpoint you want to evaluate. Single-model evaluation
-uses one GPU; harness evaluation uses two. Add `--split retain` for retained tools
-or `--split general` for general tool use (default: `forget`). Results are saved
+uses one GPU; harness evaluation uses two. The default split is `forget`; add
+`--split retain` for retained tools. Results are saved
 to `outputs/<split>_<mode>/judge.json`; use `--output` to choose a new run directory.
 
 ## Unlearning baselines
@@ -58,7 +58,6 @@ bash tool_unlearn/baselines/run.sh graddiff checkpoints/graddiff --epochs 5
 | --- | --- |
 | `ga` / `graddiff` | Gradient ascent / gradient ascent + retain CE |
 | `npo` | Negative preference optimization |
-| `retain_ft` | Retain-only fine-tuning |
 | `tooldelete_sft` / `tooldelete_dpo` | ToolDelete SFT / DPO |
 
 Replace `graddiff` with the desired method and choose a new output directory.
@@ -101,4 +100,3 @@ python evaluate.py --mode harness --model checkpoints/haru/final --output output
 
 Frozen forget/retain splits are in `tool_unlearn/data/`; general evaluation data
 is in `data/`. Training and evaluation demonstrations are disjoint.
-This release covers ToolAlpaca.
