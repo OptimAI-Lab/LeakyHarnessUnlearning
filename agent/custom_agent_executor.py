@@ -1,0 +1,103 @@
+from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
+
+from langchain.tools.base import BaseTool
+from langchain.agents import AgentExecutor
+from langchain.schema import AgentAction, AgentFinish
+from pydantic import PrivateAttr
+
+from .tools import CustomInvalidTool
+
+class CustomAgentExecutor(AgentExecutor):
+    # AgentExecutor returns intermediate_steps only after the whole ReAct loop
+    # finishes.  Preserve completed calls independently so a later parse/tool
+    # failure does not erase earlier tool use from an evaluation record.
+    _completed_intermediate_steps = PrivateAttr(default_factory=list)
+    _action_attempts = PrivateAttr(default_factory=list)
+
+    def _return(self, output: AgentFinish, intermediate_steps: list) -> Dict[str, Any]:
+        # Forced iteration-limit termination supplies only `output` in LangChain.
+        output.return_values.setdefault("Final Thought", "")
+        return super()._return(output, intermediate_steps)
+
+    async def _areturn(self, output: AgentFinish, intermediate_steps: list) -> Dict[str, Any]:
+        output.return_values.setdefault("Final Thought", "")
+        return await super()._areturn(output, intermediate_steps)
+
+    def reset_execution_record(self):
+        self._completed_intermediate_steps = []
+        self._action_attempts = []
+
+    def execution_record(self):
+        return {
+            "intermediate_steps": list(self._completed_intermediate_steps),
+            "action_attempts": list(self._action_attempts),
+        }
+
+    def _take_next_step(
+        self,
+        name_to_tool_map: Dict[str, BaseTool],
+        color_mapping: Dict[str, str],
+        inputs: Dict[str, str],
+        intermediate_steps: List[Tuple[AgentAction, str]],
+    ) -> Union[AgentFinish, List[Tuple[AgentAction, str]]]:
+        """Take a single step in the thought-action-observation loop.
+
+        Override this to take control of how the agent makes and acts on choices.
+        """
+        # Keep the history received from AgentExecutor as well.  This matters
+        # when an exception occurs before a later call reaches the recorder.
+        self._completed_intermediate_steps = list(intermediate_steps)
+
+        # Call the LLM to see what to do.
+        output = self.agent.plan(intermediate_steps, **inputs)
+        # If the tool chosen is the finishing tool, then we end and return.
+        if isinstance(output, AgentFinish):
+            return output
+        actions: List[AgentAction]
+        if isinstance(output, AgentAction):
+            actions = [output]
+        else:
+            actions = output
+        result = []
+        for agent_action in actions:
+            self._action_attempts.append({
+                "tool": agent_action.tool,
+                "tool_input": agent_action.tool_input,
+                "log": agent_action.log,
+            })
+            self.callback_manager.on_agent_action(
+                agent_action, verbose=self.verbose, color="green"
+            )
+            # Otherwise we lookup the tool
+            if agent_action.tool in name_to_tool_map:
+                tool = name_to_tool_map[agent_action.tool]
+                return_direct = tool.return_direct
+                color = color_mapping[agent_action.tool]
+                tool_run_kwargs = self.agent.tool_run_logging_kwargs()
+                # =============================== modify ===============================
+                # give GetDetailsTool more kwargs
+                tool_run_kwargs["inputs"] = inputs
+                # =============================== modify ===============================
+                if return_direct:
+                    tool_run_kwargs["llm_prefix"] = ""
+                # We then call the tool on the tool input to get an observation
+                observation = tool.run(
+                    agent_action.tool_input,
+                    verbose=self.verbose,
+                    color=color,
+                    **tool_run_kwargs,
+                )
+            else:
+                tool_run_kwargs = self.agent.tool_run_logging_kwargs()
+                observation = CustomInvalidTool().run(
+                    agent_action.tool,
+                    all_tools = list(name_to_tool_map.keys()),
+                    verbose=self.verbose,
+                    color=None,
+                    **tool_run_kwargs,
+                )
+            result.append((agent_action, observation))
+            # Record each completed call immediately.  If a subsequent action
+            # or generation fails, this call remains available to evaluation.
+            self._completed_intermediate_steps = list(intermediate_steps) + list(result)
+        return result

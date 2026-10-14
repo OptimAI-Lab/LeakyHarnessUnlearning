@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+checkpoints/
+outputs/
+logs/
+tmp/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.tar.gz
