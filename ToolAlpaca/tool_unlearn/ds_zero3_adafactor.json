@@ -1,0 +1,18 @@
+{
+  "zero_optimization": {
+    "stage": 3,
+    "allgather_partitions": true,
+    "allgather_bucket_size": 2e8,
+    "overlap_comm": true,
+    "reduce_scatter": true,
+    "reduce_bucket_size": 2e8,
+    "contiguous_gradients": true,
+    "stage3_gather_16bit_weights_on_model_save": true
+  },
+  "zero_allow_untested_optimizer": true,
+  "gradient_accumulation_steps": "auto",
+  "gradient_clipping": "auto",
+  "train_batch_size": "auto",
+  "train_micro_batch_size_per_gpu": "auto",
+  "bf16": { "enabled": "auto" }
+}

@@ -1,0 +1,2144 @@
+{
+  "train_data": "./data/train_data.json",
+  "seed": 42,
+  "forget_ratio": 0.2,
+  "eval_ratio": 0.25,
+  "n_tools_total": 447,
+  "n_tools_forget_marked": 89,
+  "n_tools_forget_realised": 82,
+  "n_tools_retain_realised": 325,
+  "n_examples": {
+    "forget_train": 635,
+    "retain_train": 2462,
+    "forget_eval": 173,
+    "retain_eval": 667
+  },
+  "forget_tools": [
+    "API Grátis",
+    "APIXU",
+    "AQICN",
+    "AZ511",
+    "Agify.io",
+    "AviationWeather",
+    "British National Bibliography",
+    "CO2 Offset",
+    "Catch The Show",
+    "Cep.la",
+    "CloudConvert",
+    "Cloudmersive Document and Data Conversion",
+    "Coinlib",
+    "CollegeScoreCard.ed.gov",
+    "Covid-19",
+    "Czech Television",
+    "Dagpi",
+    "Dangerous Discord Database",
+    "Deck of Cards",
+    "Dictum",
+    "Doge-Meme",
+    "EPO",
+    "Final Fantasy XIV",
+    "Forismatic",
+    "Foursquare",
+    "Free Dictionary",
+    "Geokeo",
+    "Giphy",
+    "GitGuardian",
+    "GoTiny",
+    "Google Books",
+    "Google Drive",
+    "Google Safe Browsing",
+    "GraphHopper",
+    "GrünstromIndex",
+    "HG Weather",
+    "Helipaddy sites",
+    "IBGE",
+    "IFTTT",
+    "IP2Proxy",
+    "IPS Online",
+    "Icons8",
+    "JSONbin.io",
+    "Jokes One",
+    "Lordicon",
+    "Luchtmeetnet",
+    "MLB Records and Stats",
+    "Mixcloud",
+    "Monster Hunter World",
+    "Movie Quote",
+    "News",
+    "Noctua",
+    "NovaDax",
+    "Nutritionix",
+    "Open Government, Norway",
+    "Open Government, Poland",
+    "Open Government, Victoria State Government",
+    "Open Science Framework",
+    "PUBG",
+    "PandaDoc",
+    "Pastebin",
+    "PhishStats",
+    "PlaceBear",
+    "Postmon",
+    "Quarantine",
+    "QuickMocker",
+    "RSS feed to JSON",
+    "Rick and Morty",
+    "RuneScape",
+    "Rwanda Locations",
+    "Songlink _ Odesli",
+    "StackExchange",
+    "SwiftKanban",
+    "Synonyms",
+    "Tenders in Romania",
+    "The Muse",
+    "The Old Reader",
+    "TheMealDB",
+    "Time Door",
+    "Tradier",
+    "TransitLand",
+    "Transport for Vancouver, Canada",
+    "Urban Observatory",
+    "WakaTime",
+    "Wikidata",
+    "Yo Momma Jokes",
+    "bng2latlong",
+    "ipapi.com",
+    "isEven (humor)"
+  ],
+  "per_tool": {
+    "Httpbin": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Weatherbit": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Tronald Dump": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "StackExchange": {
+      "group": "forget",
+      "n_train": 16,
+      "n_eval": 4
+    },
+    "Aemet": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "MetaWeather": {
+      "group": "retain",
+      "n_train": 16,
+      "n_eval": 4
+    },
+    "Lingua Robot": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Arbeitnow": {
+      "group": "retain",
+      "n_train": 10,
+      "n_eval": 3
+    },
+    "Czech Television": {
+      "group": "forget",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Gitter": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Open Government, Canada": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Readme typing SVG": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "HelloSalut": {
+      "group": "retain",
+      "n_train": 4,
+      "n_eval": 1
+    },
+    "mod.io": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Open Government, Estonia": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Merriam-Webster": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "bng2latlong": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "markerapi": {
+      "group": "retain",
+      "n_train": 12,
+      "n_eval": 4
+    },
+    "Nutritionix": {
+      "group": "forget",
+      "n_train": 14,
+      "n_eval": 4
+    },
+    "GeoNames": {
+      "group": "retain",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "Open Skills": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "SoundCloud": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Metabase": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Lexigram": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "World Bank": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "apilayer numverify": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Advice Slip": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Kraken": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "HG Weather": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Bored": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Noctua": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "openrouteservice.org": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Huobi": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "City, Nantes Open Data": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Transport for Atlanta, US": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Giphy": {
+      "group": "forget",
+      "n_train": 16,
+      "n_eval": 4
+    },
+    "Coinbase": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "CryptingUp": {
+      "group": "retain",
+      "n_train": 12,
+      "n_eval": 3
+    },
+    "Transport for Vancouver, Canada": {
+      "group": "forget",
+      "n_train": 23,
+      "n_eval": 6
+    },
+    "English Random Words": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Transport for Ottawa, Canada": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Czech National Bank": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Rick and Morty": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "openFDA": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Luchtmeetnet": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Helipaddy sites": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "AZ511": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Catch The Show": {
+      "group": "forget",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Tenders in Hungary": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Rappi": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Domainsdb.info": {
+      "group": "retain",
+      "n_train": 16,
+      "n_eval": 4
+    },
+    "Postmon": {
+      "group": "forget",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Mono": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "EPO": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Jservice": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Wikidata": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Traitify": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Quote Garden": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "MalwareBazaar": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Open Government, Denmark": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "CO2 Offset": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Bugsnax": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Currents": {
+      "group": "retain",
+      "n_train": 23,
+      "n_eval": 6
+    },
+    "Postman Echo": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Steam": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 3
+    },
+    "mailjet": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "GamerPower": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Cutt.ly": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Excuser": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "vatlayer": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "ZipRecruiter": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Free Dictionary": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "CryptoCompare": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Google Books": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Eve Online": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Lucifer Quotes": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "FullHunt": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "RandomDuck": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "TIPO": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Ducks Unlimited": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Bank of Russia": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Evil Insult Generator": {
+      "group": "retain",
+      "n_train": 12,
+      "n_eval": 4
+    },
+    "CurrencyFreaks": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "host-t.com": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Serialif Color": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Pastebin": {
+      "group": "forget",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Open Page Rank": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Dangerous Discord Database": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Microsoft Graph": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "JIRA": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "AnimeFacts": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Open Government, Greece": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "YNAB": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Logs.to": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "JCDecaux Bike": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "QWeather": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Statically": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Covalent": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Mockaroo": {
+      "group": "retain",
+      "n_train": 4,
+      "n_eval": 1
+    },
+    "IG": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "KSoft.Si Lyrics": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Machinetutors": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "DevITjobs UK": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "FoodData Central": {
+      "group": "retain",
+      "n_train": 3,
+      "n_eval": 1
+    },
+    "apilayer mailboxlayer": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Chomp": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Website Carbon": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Cats": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Privacy.com": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Open Data Minneapolis": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Waifu.pics": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Google Analytics": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "apilayer aviationstack": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Transport for Chicago, US": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Google Safe Browsing": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Short Link": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "REST Countries": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Foursquare": {
+      "group": "forget",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "Square": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Monster Hunter World": {
+      "group": "forget",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "Wolne Lektury": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Namedays Calendar": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Google Maps": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "OpenGraphr": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Deck of Cards": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Transport for Norway": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Hirak Exchange Rates": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Rwanda Locations": {
+      "group": "forget",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Alpha Vantage": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "SuredBits": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "MusicBrainz": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "apilayer marketstack": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Open Science Framework": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Urban Observatory": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Programming Quotes": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Covid-19": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "CoinAPI": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Premier League Standings ": {
+      "group": "retain",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "US Street Address": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "News": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Zen Quotes": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Digi-Key": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "RSS feed to JSON": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "ZenRows": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "SAWO Labs": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Istanbul (İBB) Open Data": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Shibe.Online": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "CheetahO": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Lichess": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Universities List": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Covid-19 Government Response": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "NetworkCalc": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "TransitLand": {
+      "group": "forget",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "The Vampire Diaries": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "District of Columbia Open Data": {
+      "group": "retain",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "Cep.la": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Postman": {
+      "group": "retain",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "Movie Quote": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Censys": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Pokémon TCG": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "City, New York Open Data": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Kroger": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "One Map, Singapore": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Financial Modeling Prep": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "The Old Reader": {
+      "group": "forget",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "Open Government, Poland": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "apilayer coinlayer": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Airtel IP": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Open Government, Netherlands": {
+      "group": "retain",
+      "n_train": 16,
+      "n_eval": 4
+    },
+    "UK Bank Holidays": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Quarantine": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Stream": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "xColors": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "quizapi.io": {
+      "group": "retain",
+      "n_train": 4,
+      "n_eval": 2
+    },
+    "UK Carbon Intensity": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Fun Fact": {
+      "group": "retain",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "Shrtcode": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "IPGEO": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "EPA": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "NPR One": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Graphs for Coronavirus": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "ImprovMX": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "ApiFlash": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Open Government, Cyprus": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "GraphHopper": {
+      "group": "forget",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "Tradier": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Open Government, Colombia": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "ip-fast.com": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "AnimeChan": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "GrünstromIndex": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "STAPI": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Open Government, New South Wales": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "GraphQL Jobs": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Danbooru Anime": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "AQICN": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Feedbin": {
+      "group": "retain",
+      "n_train": 4,
+      "n_eval": 2
+    },
+    "Dictum": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "RuneScape": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Universalis": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Zestful": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "AIS Hub": {
+      "group": "retain",
+      "n_train": 4,
+      "n_eval": 2
+    },
+    "EVA": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Open Disease": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Micro Weather": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "VALR": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Holidays": {
+      "group": "retain",
+      "n_train": 3,
+      "n_eval": 1
+    },
+    "PhishStats": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Technical Analysis": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Untappd": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "OpenFIGI": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "IBGE": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "geoPlugin": {
+      "group": "retain",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "SpaceX": {
+      "group": "retain",
+      "n_train": 15,
+      "n_eval": 4
+    },
+    "Game of Thrones Quotes": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Blogger": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "COVID-ID": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Musixmatch": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Doge-Meme": {
+      "group": "forget",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Cloudflare Trace": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "FFXIV Collect": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "WeatherAPI": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Calendarific": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Forismatic": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Open Government, Germany": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Tenders in Romania": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Wizard World": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Vagalume": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "WakaTime": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Wallhaven": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Pinterest": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "OwlBot": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "FishWatch": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "owo": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "CircleCI": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "University of Oslo": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Synonyms": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Mailchimp": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Colormind": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Spyse": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Country": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Data.gov": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Football-Data": {
+      "group": "retain",
+      "n_train": 4,
+      "n_eval": 2
+    },
+    "Transport for Spain": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Tokopedia": {
+      "group": "retain",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "MLB Records and Stats": {
+      "group": "forget",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "API Grátis": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "NewsX": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Imsea": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Bitly": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "APIs.guru": {
+      "group": "retain",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "Econdb": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "National Bank of Poland": {
+      "group": "retain",
+      "n_train": 13,
+      "n_eval": 4
+    },
+    "GeoDB Cities": {
+      "group": "retain",
+      "n_train": 15,
+      "n_eval": 4
+    },
+    "Waifu.im": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Magic The Gathering": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Geocodify.com": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Toolcarton": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Bitbucket": {
+      "group": "retain",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "FingerprintJS Pro": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Phisherman": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Guild Wars 2": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Ciprand": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "LocationIQ": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Wger": {
+      "group": "retain",
+      "n_train": 4,
+      "n_eval": 2
+    },
+    "NekosBest": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "arXiv": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Transport for Sao Paulo, Brazil": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "TheMealDB": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "US Presidential Election Data by TogaTech": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "IUCN": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Dune": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Catalogopolis": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Cryptonator": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Metacert": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "When is next MCU film": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "UUID Generator": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Coronavirus": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Brazil Receita WS": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "IFTTT": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "ObjectCut": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "ipapi.com": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Clash Royale": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "MCU Countdown": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Blockchain": {
+      "group": "retain",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "Schiphol Airport": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Disify": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Sendgrid": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "JSONbin.io": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "keycdn IP Location Finder": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Metaphorsum": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Guerrilla Mail": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Pinball Map": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Time Door": {
+      "group": "forget",
+      "n_train": 2,
+      "n_eval": 1
+    },
+    "NLP Cloud": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Final Fantasy XIV": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "PoetryDB": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "IP2Proxy": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Coinlib": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Billplz": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "PurgoMalum": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "URLScan.io": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "PostalPinCode": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "NPPES": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Transport for Los Angeles, US": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Spanish random names": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Open Government, Victoria State Government": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Trace Moe": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "CountryStateCity": {
+      "group": "retain",
+      "n_train": 3,
+      "n_eval": 1
+    },
+    "Bittrex": {
+      "group": "retain",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "Agify.io": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Ticketmaster": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Transport for Germany": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Randommer": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Forza": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "ELI": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "iTunes Search": {
+      "group": "retain",
+      "n_train": 1,
+      "n_eval": 1
+    },
+    "Freelancer": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "British National Bibliography": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Twitch": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "PandaDoc": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Gemini": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Lowy Asia Power Index": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Federal Register": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Puyo Nexus": {
+      "group": "retain",
+      "n_train": 5,
+      "n_eval": 2
+    },
+    "Open Government, Luxembourg": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Chainlink": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Mixcloud": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "GitGuardian": {
+      "group": "forget",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "AviationWeather": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Polygon": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Animal Crossing: New Horizons": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Phone Specification": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Gaana": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Open Government, Argentina": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Codex": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "NovaDax": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Yelp": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "QuickMocker": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "DomainDb Info": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Geokeo": {
+      "group": "forget",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Jokes One": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "MercadoPago": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Google Docs": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "ipgeolocation": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "IP 2 Country": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "PandaScore": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Chinese Text Project": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Yo Momma Jokes": {
+      "group": "forget",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "apilayer userstack": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Open Topo Data": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Transport for Lisbon, Portugal": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "GoTiny": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Stromberg Quotes": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "xMath": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "MyVaccination": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "The Muse": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Lordicon": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Line": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Transport for Switzerland": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "StockData": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Genius": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Shrtlnk": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "OpenAQ": {
+      "group": "retain",
+      "n_train": 4,
+      "n_eval": 2
+    },
+    "Micro DB": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "LectServe": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "CloudConvert": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Breaking Bad Quotes": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "WhatJobs": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Transport for The Netherlands": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "ClickUp": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "IPS Online": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Coinbase Pro": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Azure DevOps": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Systembolaget": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Open Government, Sweden": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Fed Treasury": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Open Government, Italy": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Chronicling America": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "isEven (humor)": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "CleanURI": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Open Food Facts": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "TacoFancy": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "Coffee": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "MailboxValidator": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Open Government, Switzerland": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Semantria": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Twitter": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Icons8": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "administrative-divisons-db": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Food Standards Agency": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "CollegeScoreCard.ed.gov": {
+      "group": "forget",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "The Guardian": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Cross Universe": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "ColorfulClouds": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Metro Lisboa": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Vadivelu HTTP Codes": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Transport for Washington, US": {
+      "group": "retain",
+      "n_train": 7,
+      "n_eval": 2
+    },
+    "VulDB": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "OpenStreetMap": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "PUBG": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Dogs": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Arbeitsamt": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Irisnet": {
+      "group": "retain",
+      "n_train": 6,
+      "n_eval": 2
+    },
+    "Unsplash": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "SwiftKanban": {
+      "group": "forget",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "KKBOX": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    },
+    "Bible-api": {
+      "group": "retain",
+      "n_train": 8,
+      "n_eval": 2
+    }
+  }
+}
